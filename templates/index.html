@@ -158,7 +158,7 @@
 
     <!-- Footer -->
     <footer class="text-center py-6 text-gray-500 text-sm">
-        <p>Image Similarity Search using ResNet50 Feature Extraction</p>
+        <p>Monkey Species Classifier using MobileNetV2 Transfer Learning</p>
     </footer>
 
     <script>
@@ -330,6 +330,7 @@
 
         function createResultCard(result, index) {
             const similarity = (result.similarity * 100).toFixed(1);
+            const species = result.species;
             const imagePath = result.image_path || result.path || result.url;
             
             const card = document.createElement('div');
@@ -346,6 +347,7 @@
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-white font-semibold">#${index + 1}</span>
                         <span class="text-indigo-400 font-bold">${similarity}%</span>
+                        <span class="text-indigo-400 font-bold">${species}</span>
                     </div>
                     <div class="h-2 bg-white/10 rounded-full overflow-hidden">
                         <div class="similarity-bar h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" 
